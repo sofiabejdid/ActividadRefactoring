@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tecla_Abajo : MonoBehaviour
+public class Tecla_Derecha : Tecla
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        teclaAsignada = KeyCode.D;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public override void Ejecutar_Funcionalidad(Presentador p)
     {
-        
+        p.Cambiar_Direccion(Direccion.Derecha);
     }
 }

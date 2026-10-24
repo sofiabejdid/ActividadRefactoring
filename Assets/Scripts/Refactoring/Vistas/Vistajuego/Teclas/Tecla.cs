@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tecla : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Tecla 
     {
-        
+        public KeyCode teclaAsignada;
+
+        public  bool Verificar_Tecla_Ingresada()
+        {
+            return Input.GetKeyDown(teclaAsignada);
+        }
+
+        public abstract void Ejecutar_Funcionalidad(Presentador p);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}

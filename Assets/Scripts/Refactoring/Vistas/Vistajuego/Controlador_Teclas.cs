@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Controlador_Teclas : MonoBehaviour
+public class Controlador_Teclas 
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Tecla> Teclas;
+    public Presentador presentador;
+    public void Verificar_Tecla_Presionada()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        foreach (Tecla t in Teclas){
+            if(t.Verificar_Tecla_Ingresada())
+            {
+                t.Ejecutar_Funcionalidad(presentador);
+            }
+        }
     }
 }
