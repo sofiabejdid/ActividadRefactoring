@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Refactoring.Presentador;
 
-public class Pared : MonoBehaviour
+namespace Refactoring.Modelo.Colisiones.Entidades
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Pared : Entidad
     {
-        
-    }
+        public bool Verificar_Tipo_Entidad(Celda c)
+        {
+            // Verifica si la celda contiene una pared
+            return c != null && c.Obtener_Entidades().Exists(e => e is Pared);
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void Ejecutar_Funcionalidad(Controlador_Entidades c)
+        {
+            c.Avisar_Funcionalidad_Pared();
+        }
+
+        public override void Dibujar(Presenter presentador, int posX, int posZ)
+        {
+            presentador.dibujar_pared(posX, posZ);
+        }
     }
 }

@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Refactoring.Modelo.Constructor;
 
-public class Director_Nivel_1 : MonoBehaviour
+using ConstructorBase = Refactoring.Modelo.Constructor.Constructor;
+
+namespace Refactoring.Modelo.Director
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Director_Nivel_1 : Director
     {
-        
-    }
+        public Director_Nivel_1(ConstructorBase constructor) : base(constructor)
+        {
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void Construir()
+        {
+            constructor.Hacer_Tablero();
+            constructor.Hacer_Muros();
+            constructor.Hacer_Obstaculos();
+            constructor.Hacer_Cabeza_Serpiente();
+            constructor.Hacer_Frutas();
+        }
     }
 }

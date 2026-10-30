@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Refactoring.Presentador;
+using Refactoring.Modelo.Movimiento;
 
-public class Tecla_Abajo : MonoBehaviour
+namespace Refactoring.Vistas.Teclas
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Tecla_Arriba : Tecla
     {
-        
-    }
+        public Tecla_Arriba()
+        {
+            teclaAsignada = KeyCode.W;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void Ejecutar_Funcionalidad(Presenter p)
+        {
+            p.CambiarDireccion(Direccion.Arriba);
+        }
     }
 }
