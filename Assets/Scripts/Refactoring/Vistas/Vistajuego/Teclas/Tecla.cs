@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Refactoring.Presentador;
 
-public class Tecla : MonoBehaviour
+namespace Refactoring.Vistas.Teclas
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Tecla
     {
-        
-    }
+        public KeyCode teclaAsignada;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public bool Verificar_Tecla_Ingresada()
+        {
+            return Input.GetKeyDown(teclaAsignada);
+        }
+
+        public abstract void Ejecutar_Funcionalidad(Presenter p);
     }
 }

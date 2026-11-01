@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Refactoring.Presentador;
 
-public class Entidad : MonoBehaviour
+namespace Refactoring.Modelo.Colisiones.Entidades
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Entidad
     {
-        
-    }
+        public abstract void Ejecutar_Funcionalidad(Controlador_Entidades c);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public abstract void Dibujar(Presenter presentador, int posX, int posZ);
     }
 }

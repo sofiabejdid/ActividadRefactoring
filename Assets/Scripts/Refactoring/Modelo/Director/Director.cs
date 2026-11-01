@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using Refactoring.Modelo.Constructor; // Asumiendo que tu interfaz/clase Constructor estar� aqu�
 
-public class Director : MonoBehaviour
+using ConstructorBase = Refactoring.Modelo.Constructor.Constructor;
+
+namespace Refactoring.Modelo.Director
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Director
     {
-        
-    }
+        protected ConstructorBase constructor;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Director(ConstructorBase constructor)
+        {
+            this.constructor = constructor;
+        }
+
+        public abstract void Construir();
     }
 }

@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Refactoring.Presentador;
 
-public class Tecla_Abajo : MonoBehaviour
+namespace Refactoring.Vistas.Teclas
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Tecla_Aumentar_Velocidad : Tecla
     {
-        
-    }
+        public Tecla_Aumentar_Velocidad()
+        {
+            teclaAsignada = KeyCode.V;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public override void Ejecutar_Funcionalidad(Presenter p)
+        {
+            p.Aumentar_Velocidad();
+        }
     }
 }
